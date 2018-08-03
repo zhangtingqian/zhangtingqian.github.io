@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="相关事件
+drag
+dragstart
+dragend
+dragover
+dragenter
+dragleave
+dragexit
+drop
+
+原生写法12345678910111213141516171819202122232425262728293031323334353637383940414" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>拖拽栗子 | 婷儿☆奋斗</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="相关事件 drag dragstart dragend dragover dragenter dragleave dragexit drop  原生写法12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152var dragged;  /* 可拖动的目标元素会触发事">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="拖拽栗子">
+<meta property="og:url" content="https://zhangtingqian.github.io/2018/08/03/drag/index.html">
+<meta property="og:site_name" content="婷儿☆奋斗">
+<meta property="og:description" content="相关事件 drag dragstart dragend dragover dragenter dragleave dragexit drop  原生写法12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152var dragged;  /* 可拖动的目标元素会触发事">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-03T07:08:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="拖拽栗子">
+<meta name="twitter:description" content="相关事件 drag dragstart dragend dragover dragenter dragleave dragexit drop  原生写法12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152var dragged;  /* 可拖动的目标元素会触发事">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="婷儿☆奋斗" rel="home">婷儿☆奋斗</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">为成为更好的自己，努力吧 &lt;(*￣▽￣*)&gt;</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">主页</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">文章列表</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-drag" class="post-drag post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      拖拽栗子
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="https://zhangtingqian.github.io/2018/08/03/drag/" data-id="cjkdnfn760005oc87sv2t6hhd" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            
+              <span class="archive-article-date">
+                阅读量 <span id="busuanzi_value_page_pv"></span>
+              </span>
+          
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h3 id="相关事件"><a href="#相关事件" class="headerlink" title="相关事件"></a>相关事件</h3><ol>
+<li>drag</li>
+<li>dragstart</li>
+<li>dragend</li>
+<li>dragover</li>
+<li>dragenter</li>
+<li>dragleave</li>
+<li>dragexit</li>
+<li>drop</li>
+</ol>
+<h3 id="原生写法"><a href="#原生写法" class="headerlink" title="原生写法"></a>原生写法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">var dragged;</span><br><span class="line"></span><br><span class="line">  /* 可拖动的目标元素会触发事件 */</span><br><span class="line">  document.addEventListener(&quot;drag&quot;, function( event ) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;, false);</span><br><span class="line"></span><br><span class="line">  document.addEventListener(&quot;dragstart&quot;, function( event ) &#123;</span><br><span class="line">      // 保存拖动元素的引用(ref.)</span><br><span class="line">      dragged = event.target;</span><br><span class="line">      // 使其半透明</span><br><span class="line">      event.target.style.opacity = .5;</span><br><span class="line">  &#125;, false);</span><br><span class="line"></span><br><span class="line">  document.addEventListener(&quot;dragend&quot;, function( event ) &#123;</span><br><span class="line">      // 重置透明度</span><br><span class="line">      event.target.style.opacity = &quot;&quot;;</span><br><span class="line">  &#125;, false);</span><br><span class="line"></span><br><span class="line">  /* 放下目标节点时触发事件 */</span><br><span class="line">  document.addEventListener(&quot;dragover&quot;, function( event ) &#123;</span><br><span class="line">      // 阻止默认动作</span><br><span class="line">      event.preventDefault();</span><br><span class="line">  &#125;, false);</span><br><span class="line"></span><br><span class="line">  document.addEventListener(&quot;dragenter&quot;, function( event ) &#123;</span><br><span class="line">      // 当可拖动的元素进入可放置的目标高亮目标节点</span><br><span class="line">      if ( event.target.className == &quot;dropzone&quot; ) &#123;</span><br><span class="line">          event.target.style.background = &quot;purple&quot;;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">  &#125;, false);</span><br><span class="line"></span><br><span class="line">  document.addEventListener(&quot;dragleave&quot;, function( event ) &#123;</span><br><span class="line">      // 当拖动元素离开可放置目标节点，重置其背景</span><br><span class="line">      if ( event.target.className == &quot;dropzone&quot; ) &#123;</span><br><span class="line">          event.target.style.background = &quot;&quot;;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">  &#125;, false);</span><br><span class="line"></span><br><span class="line">  document.addEventListener(&quot;drop&quot;, function( event ) &#123;</span><br><span class="line">      // 阻止默认动作（如打开一些元素的链接）</span><br><span class="line">      event.preventDefault();</span><br><span class="line">      // 移动拖动的元素到所选择的放置目标节点</span><br><span class="line">      if ( event.target.className == &quot;dropzone&quot; ) &#123;</span><br><span class="line">          event.target.style.background = &quot;&quot;;</span><br><span class="line">          dragged.parentNode.removeChild( dragged );</span><br><span class="line">          event.target.appendChild( dragged );</span><br><span class="line">      &#125;</span><br><span class="line">    </span><br><span class="line">  &#125;, false);</span><br></pre></td></tr></table></figure>
+<h3 id="jQuery写法"><a href="#jQuery写法" class="headerlink" title="jQuery写法"></a>jQuery写法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//拖放开始:获取id放入dataTransfer</span><br><span class="line">$(&quot;.divide-pep&quot;).on(&quot;dragstart&quot;,function(e)&#123;</span><br><span class="line">    e.originalEvent.dataTransfer.setData(&quot;obj_add&quot;,e.target.id);</span><br><span class="line">    console.log(e.originalEvent.dataTransform)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//允许放入</span><br><span class="line">    $(&quot;.divide-droppable,.option-area&quot;).on(&quot;dragover&quot;,function(e)&#123;</span><br><span class="line">    e.originalEvent.preventDefault();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//放下事件</span><br><span class="line">    $(&quot;.divide-droppable&quot;).on(&quot;drop&quot;,function(e)&#123;</span><br><span class="line">    e.originalEvent.preventDefault;</span><br><span class="line">    var id = e.originalEvent.dataTransfer.getData(&quot;obj_add&quot;);</span><br><span class="line">    $(this).append($(&quot;#&quot;+id));</span><br><span class="line"> &#125;)</span><br><span class="line"></span><br><span class="line">    $(&quot;.option-area&quot;).on(&quot;drop&quot;,function(e)&#123;</span><br><span class="line">        e.originalEvent.preventDefault;</span><br><span class="line">        var id = e.originalEvent.dataTransfer.getData(&quot;obj_add&quot;);</span><br><span class="line">        $(this).append($(&quot;#&quot;+id));</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="originalEvent是什么？"><a href="#originalEvent是什么？" class="headerlink" title="originalEvent是什么？"></a>originalEvent是什么？</h3><p>个人理解originalEvent是jQuery封装的，用于获取原生event事件的；</p>
+<p><strong>栗子</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#aaa&apos;).on(&quot;touchstart&quot;, touchStart);</span><br><span class="line">    function touchStart(event)&#123;</span><br><span class="line">        console.log(event);</span><br><span class="line">&#125;</span><br><span class="line">//这样可读到，event.originalEvent.touches[0]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//用原生的，这样可读到，event.touches[0]</span><br><span class="line">document.getElementById(&apos;aaa&apos;).addEventListener(&quot;touchstart&quot;, touchStart, false);</span><br><span class="line">    function touchStart(event)&#123;</span><br><span class="line">        console.log(event.touches[0]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="dataTransfer是什么？"><a href="#dataTransfer是什么？" class="headerlink" title="dataTransfer是什么？"></a>dataTransfer是什么？</h3><p><em>在进行拖放操作时，DataTransfer对象用来保存被拖动的数据。它可以保存一项或多项数据、一种或者多种数据类型。</em></p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p><strong>addElement()</strong></p>
+<p>设置拖动源。通常你不需要改变这项，如果修改这项将会影响拖动的哪个节点和dragend事件的触发。默认目标是被拖动的节点。<br>obj.addElement();</p>
+<p><strong>clearData()</strong></p>
+<p>删除与给定类型关联的数据。类型参数是可选的。如果类型为空或未指定，将删除所有类型相关联的数据。如果不存在指定类型的数据，或数据传输不包含任何数据，此方法将没有任何效果。<br>obj.clearData(type);</p>
+<p><strong>getData()</strong></p>
+<p>根据指定的类型检索数据，如果指定类型的数据不存在或者该 DataTransfer 对象中没有数据，方法将返回一个空字符串。<br>obj.getData(type);</p>
+<p><strong>setData()</strong></p>
+<p>为一个给定的类型设置数据。如果该数据类型不存在，它将添加到的末尾，这样类型列表中的最后一个项目将是新的格式。如果已经存在的数据类型，替换相同的位置的现有数据。就是，当更换相同类型的数据时，不会更改类型列表的顺序。<br>obj.setData(type,data);</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2018/08/03/drag/">
+    <time datetime="2018-08-03T07:03:54.000Z" class="entry-date">
+        2018-08-03
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2018/08/03/load/" rel="prev"><span class="meta-nav">←</span> 浏览器资源加载和运行脑图（基于高性能JS)</a></span>
+    
+    
+        <span class="nav-next"><a href="/2018/07/27/几道Promise的题/" rel="next">几道Promise的题[转] <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside class="widget">
+  <h3 class="widget-title">关于我</h3>
+  <div class="widget-content">
+    <p>邮箱：773833083@qq.com</p>
+    <p>QQ：773833083</p>
+    <iframe width="100%" height="110" class="share_self" frameborder="0" scrolling="no" src=""></iframe>
+    
+    <iframe width="100%" height="320" frameborder="0" scrolling="no" src=""></iframe>
+  </div>
+</aside>
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-content">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/03/纯css实现自适应布局表格/">纯css实现自适应布局表格</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/03/Hexo/">Hexo常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/03/load/">浏览器资源加载和运行脑图（基于高性能JS)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/03/drag/">拖拽栗子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/27/几道Promise的题/">几道Promise的题[转]</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    <aside class="widget">
+  <h3 class="widget-title">赞助我</h3>
+  <div class="widget-content">
+    <img src="/css/images/qr_alipay.png" style="width:100%;">
+  </div>
+</aside>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浏览器/">浏览器</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/浏览器/" style="font-size: 10px;">浏览器</a>
+    </div>
+  </aside>
+
+  
+    <!-- pv的方式，单个用户连续点击n篇文章，记录n次访问量 -->
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+  
+</div>
+      </div>
+      <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<footer id="colophon" role="contentinfo">
+    <p>&copy; 2018 zt
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
